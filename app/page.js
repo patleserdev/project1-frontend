@@ -13,8 +13,14 @@ export default function Home() {
 
     
    
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px]  min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="">
+
+        <ul>
+          Site de démo pour travailler sur les formulaires dynamiques en React
+          <li>En cours : création de l'interface liée à un fichier json de structure</li>
+          <li>Une fois le formData dynamique fonctionnel , je ferais les tests de fetch</li>
+        </ul>
         
     
       </main>
