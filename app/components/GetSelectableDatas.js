@@ -1,6 +1,6 @@
 "use client"
 import { useEffect,useState } from "react"
-export default function GetSelectableDatas({ source }) {
+export default function GetSelectableDatas({ source,counter }) {
     const URL_BACKEND="http://localhost:3000"
     const [datas,setDatas]=useState([])
 
@@ -28,7 +28,7 @@ export default function GetSelectableDatas({ source }) {
 
     const displayDatas=[]
     // datas.map((e)=> displayDatas.push({value:e,label:e}))
-    datas.map((e)=> displayDatas.push(<option value={e}>{e}</option>))
+    datas.map((e,i)=> displayDatas.push(<option key={counter+i} value={e}>{e}</option>))
 
 
     return displayDatas

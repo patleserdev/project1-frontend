@@ -23,10 +23,13 @@ export default function Getdatas({ source,inputs }) {
 
     const displayDatas=[]
     let i=0
+    
      for(let data of datas)
      {
         let content=[]
-        inputs.map((input,i) =>  content.push(<td key={"td"+i} className="capitalize">{data[input]}</td>) )   
+        let widthResizer=(100/inputs.length)
+        console.log(widthResizer)
+        inputs.map((input,i) =>  content.push(<td className={`w-[${widthResizer}%] capitalize`} key={"td"+i} >{data[input]}</td>) )   
         displayDatas.push(<tr key={i++}>{content}</tr>)
     }
 

@@ -7,7 +7,7 @@ export default function Navbar() {
     const pathname = usePathname()
     const active="p-2 bg-slate-500 text-white" 
     const inactive= "text-slate-500"
-console.log(pathname)
+
   return (
 
             <header className="p-2">

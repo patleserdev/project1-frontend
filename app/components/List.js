@@ -11,7 +11,7 @@ export default function List({ schema }) {
     datas.map((e)=> e.source == schema ? e.inputs.map((input)=> inputs.push(input.field)) : null)
 
   return (
-    <div className="border w-full p-2 my-2">
+    <div className="border min-w-[50vw] p-2 mt-5">
       {displayLabel}
       <h4>
         Filtrer par <input type="text" />
