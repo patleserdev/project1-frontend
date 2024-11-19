@@ -1,12 +1,9 @@
-import Form from "../components/Form.js";
-
-import List from "../components/List.js";
+import ComponentsLoader from "../components/ComponentsLoader"
 
 export const metadata = {
-  title: 'Site de recettes - Catégories de recettes',
-  description: '...',
-}
-
+  title: "Site de recettes - Catégories de recettes",
+  description: "...",
+};
 
 export default function Rcategories() {
   const schema = "recipescategories";
@@ -16,8 +13,7 @@ export default function Rcategories() {
       <main className="w-full flex flex-col items-center justify-center">
         <h1 className="text-2xl underline">Catégories de recettes :</h1>
 
-        <Form schema={schema} />
-        <List schema={schema} />
+        <ComponentsLoader schema={schema}/>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
