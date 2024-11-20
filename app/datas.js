@@ -127,6 +127,7 @@ export const datas=[
         field:'ingredients',
         type:'entitychoice',
         entity:'ingredients',
+        identifier:'id',
         inputs:
         [
           {
@@ -156,7 +157,7 @@ export const datas=[
             required:true,
             placeholder:'la mesure',
             display:"true",
-            valueinselect:"_id",
+            valueinselect:"id",
             displayinselect:"unit"
            }
         

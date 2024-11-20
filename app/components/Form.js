@@ -54,7 +54,7 @@ export default function Form({ schema, except = [], hidden = [],condensed,title 
  {
   setFormData(entity)
  }
-  }, [entity,formData]);
+  }, [entity]);
 
   /**
    *  Définit identifier
@@ -70,7 +70,7 @@ export default function Form({ schema, except = [], hidden = [],condensed,title 
    */
   const handleChange = (e) => {
     // version boolean
-    // console.log(e)
+     console.log(e)
 
     if (e.target.type == "checkbox") {
       setFormData((prev) => ({
@@ -82,11 +82,28 @@ export default function Form({ schema, except = [], hidden = [],condensed,title 
         ...prev,
         [e.target.name]: e.target.value,
       }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [e.target.attributes.field.value]: e.target.value,
-      }));
+    } 
+    else 
+    {
+      // mode edit 
+      if(formData[e.target.attributes.field.value])
+      {
+        const updatedFormData = { ...formData };
+        // Update the clone
+        updatedFormData[e.target.attributes.field.value] = e.target.value;
+        // If this is part of state, set it back to state
+        setFormData(updatedFormData);
+      
+      }
+      else
+      {
+        setFormData((prev) => ({
+          ...prev,
+          [e.target.attributes.field.value]: e.target.value,
+        }));
+      }
+      
+      
     }
   };
 
@@ -394,7 +411,7 @@ setFormData((prev) => {
                     type={input.type}
                     onChange={(e) => handleChange(e)}
                     value={
-                      formData[input.field] !== undefined
+                      formData[input.field]
                         ? decodeURI(formData[input.field])
                         : ""
                     }

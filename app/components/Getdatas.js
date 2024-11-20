@@ -27,7 +27,7 @@ export default function Getdatas({ source,inputs,identifier }) {
                 const result = await response.json()
                 if(result)
                 {
-                    // console.log('datasfromdb',result)
+                    //  console.log('datasfromdb',result)
                     setDatas(result.data)
                 }
                
